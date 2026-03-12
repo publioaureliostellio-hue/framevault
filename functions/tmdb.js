@@ -37,5 +37,6 @@ export async function onRequest(context) {
   } catch (error) {
     console.log('Errore fetch TMDB:', error);
     return new Response(JSON.stringify({ error: "Errore di comunicazione con TMDB" }), { status: 500 });
+    
   }
 }
