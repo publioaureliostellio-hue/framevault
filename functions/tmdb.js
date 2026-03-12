@@ -1,9 +1,14 @@
 export async function onRequest(context) {
+  console.log('Function tmdb chiamata');
+  
   const API_KEY = context.env.TMDB_SECRET_KEY;
 
   if (!API_KEY) {
+    console.log('API KEY mancante!');
     return new Response(JSON.stringify({ error: "Chiave TMDB mancante nel server" }), { status: 500 });
   }
+
+  console.log('API KEY presente, procedo...');
 
   const { searchParams } = new URL(context.request.url);
   const action = searchParams.get("action");
@@ -30,6 +35,7 @@ export async function onRequest(context) {
       headers: { "Content-Type": "application/json" }
     });
   } catch (error) {
+    console.log('Errore fetch TMDB:', error);
     return new Response(JSON.stringify({ error: "Errore di comunicazione con TMDB" }), { status: 500 });
   }
 }
