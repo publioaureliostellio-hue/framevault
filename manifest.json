@@ -1,15 +1,15 @@
-﻿{
-"id": "com.alessandroruoso.framevault",
+{
+  "id": "com.alessandroruoso.framevault",
   "name": "FrameVault",
   "short_name": "FrameVault",
-  "description": "Il tuo caveau cinematografico privato. Organizza, filtra e recensisci film e serie TV con una grafica premium e offline-first.",
+  "description": "Your private cinematic vault. Organize, filter and review movies and TV series with a premium design and offline-first experience.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#0a0a0f",
   "theme_color": "#c9a84c",
   "orientation": "portrait-primary",
   "dir": "ltr",
-  "lang": "it-IT",
+  "lang": "en",
   "categories": ["entertainment", "utilities", "lifestyle"],
   "icons": [
     {
@@ -27,9 +27,9 @@
   ],
   "shortcuts": [
     {
-      "name": "Aggiungi Film",
-      "short_name": "Nuovo",
-      "description": "Aggiungi un nuovo film alla cassaforte",
+      "name": "Add Movie",
+      "short_name": "New",
+      "description": "Add a new title to your vault",
       "url": "/",
       "icons": [{ "src": "icon-512.png", "sizes": "192x192" }]
     }
