@@ -1,5 +1,5 @@
-﻿const CACHE_NAME = 'framevault-cache-v3';
-const OFFLINE_URL = '/index.html'; // Usiamo la home come pagina offline
+const CACHE_NAME = 'framevault-cache-v4';
+const OFFLINE_URL = '/index.html';
 
 const urlsToCache = [
   '/',
@@ -16,11 +16,10 @@ self.addEventListener('install', (event) => {
   self.skipWaiting();
   event.waitUntil(
     caches.open(CACHE_NAME).then((cache) => {
-      // Usiamo addAll e catch per non far fallire l'installazione se un link esterno salta
       return Promise.all(
         urlsToCache.map(url => {
           return cache.add(url).catch(reason => {
-             console.log(`FrameVault: Errore cache su ${url} (ignorato per PWABuilder)`);
+            console.log(`FrameVault: Errore cache su ${url} (ignorato)`);
           });
         })
       );
@@ -38,9 +37,11 @@ self.addEventListener('activate', (event) => {
   );
 });
 
-// Strategia Stale-While-Revalidate (La preferita da PWABuilder)
 self.addEventListener('fetch', (event) => {
   if (event.request.method !== 'GET') return;
+
+  // Non cachare mai le chiamate API alle functions
+  if (event.request.url.includes('/functions/')) return;
 
   event.respondWith(
     caches.match(event.request).then((cachedResponse) => {
@@ -50,9 +51,8 @@ self.addEventListener('fetch', (event) => {
         });
         return networkResponse;
       }).catch(() => {
-        // Se la rete fallisce e richiede HTML, restituisci l'index.html
         if (event.request.headers.get('accept').includes('text/html')) {
-           return caches.match(OFFLINE_URL);
+          return caches.match(OFFLINE_URL);
         }
       });
       return cachedResponse || fetchPromise;
