@@ -504,7 +504,7 @@ const MovieForm = ({ onSave, onClose, initialData, lang, activeTab }) => {
     if (!form.titolo) return;
     setIsSearching(true);
     try {
-      const res = await fetch(`/.netlify/functions/tmdb?action=search&query=${encodeURIComponent(form.titolo)}&lang=${lang === 'it' ? 'it-IT' : 'en-US'}`);
+      const res = await fetch(`/functions/tmdb?action=search&query=${encodeURIComponent(form.titolo)}&lang=${lang === 'it' ? 'it-IT' : 'en-US'}`);
       const data = await res.json();
       const filteredResults = (data.results || []).filter(r => r.media_type === 'movie' || r.media_type === 'tv').slice(0, 6);
       setTmdbResults(filteredResults);
@@ -520,7 +520,7 @@ const MovieForm = ({ onSave, onClose, initialData, lang, activeTab }) => {
     setIsSearching(true);
     setTvData(null);
     try {
-      const detailRes = await fetch(`/.netlify/functions/tmdb?action=details&media_type=${res.media_type}&id=${res.id}&lang=${lang === 'it' ? 'it-IT' : 'en-US'}`);
+      const detailRes = await fetch(`/functions/tmdb?action=details&media_type=${res.media_type}&id=${res.id}&lang=${lang === 'it' ? 'it-IT' : 'en-US'}`);
       const d = await detailRes.json();
       const director = res.media_type === "movie" ? d.credits?.crew?.find(c => c.job === "Director")?.name : d.created_by?.[0]?.name;
       const cast = d.credits?.cast?.slice(0, 5).map(c => c.name).join(", ");
