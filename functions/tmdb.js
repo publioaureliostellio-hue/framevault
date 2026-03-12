@@ -1,14 +1,12 @@
 export async function onRequest(context) {
-  console.log('Function tmdb chiamata');
-  
   const API_KEY = context.env.TMDB_SECRET_KEY;
 
   if (!API_KEY) {
-    console.log('API KEY mancante!');
-    return new Response(JSON.stringify({ error: "Chiave TMDB mancante nel server" }), { status: 500 });
+    return new Response(JSON.stringify({ error: "Chiave TMDB mancante nel server" }), { 
+      status: 500,
+      headers: { "Content-Type": "application/json; charset=utf-8" }
+    });
   }
-
-  console.log('API KEY presente, procedo...');
 
   const { searchParams } = new URL(context.request.url);
   const action = searchParams.get("action");
@@ -24,7 +22,10 @@ export async function onRequest(context) {
   } else if (action === "details") {
     url = `https://api.themoviedb.org/3/${media_type}/${id}?api_key=${API_KEY}&language=${lang}&append_to_response=credits`;
   } else {
-    return new Response(JSON.stringify({ error: "Azione non valida" }), { status: 400 });
+    return new Response(JSON.stringify({ error: "Azione non valida" }), { 
+      status: 400,
+      headers: { "Content-Type": "application/json; charset=utf-8" }
+    });
   }
 
   try {
@@ -32,11 +33,12 @@ export async function onRequest(context) {
     const data = await response.json();
     return new Response(JSON.stringify(data), {
       status: 200,
-      headers: { "Content-Type": "application/json" }
+      headers: { "Content-Type": "application/json; charset=utf-8" }
     });
   } catch (error) {
-    console.log('Errore fetch TMDB:', error);
-    return new Response(JSON.stringify({ error: "Errore di comunicazione con TMDB" }), { status: 500 });
-    
+    return new Response(JSON.stringify({ error: "Errore di comunicazione con TMDB" }), { 
+      status: 500,
+      headers: { "Content-Type": "application/json; charset=utf-8" }
+    });
   }
 }
