@@ -8,6 +8,7 @@
 <meta name="apple-mobile-web-app-title" content="FrameVault"/>
 <title>FrameVault</title>
 <link rel="manifest" href="manifest.json">
+<link rel="icon" href="icon-512.png">
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react/18.2.0/umd/react.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/react-dom/18.2.0/umd/react-dom.production.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/babel-standalone/7.23.2/babel.min.js"></script>
@@ -65,7 +66,7 @@ button{cursor:pointer}
 <body>
 <div id="root"></div>
 <script type="text/babel">
-const { useState, useEffect, useCallback, useRef } = React;
+const { useState, useEffect } = React;
 
 const translations = {
   it: {
@@ -191,6 +192,254 @@ const translations = {
     noResultsTitle: "No results found",
     noResultsDesc: "No titles match your current search or applied filters.",
     resetFilters: "Reset filters"
+  },
+  de: {
+    appTitle: "FrameVault",
+    movies: "Filme",
+    series: "Serien",
+    add: "Neuer Eintrag",
+    addMovie: "Film hinzufügen",
+    addSeries: "Serie hinzufügen",
+    search: "Sammlung durchsuchen...",
+    stats: "Statistiken",
+    settings: "Einstellungen",
+    watched: "Gesehen",
+    toWatch: "Noch anzusehen",
+    save: "Speichern",
+    cancel: "Abbrechen",
+    delete: "Löschen",
+    director: "Regisseur",
+    actor: "Besetzung",
+    creator: "Ersteller",
+    year: "Jahr",
+    duration: "Dauer / Episoden",
+    genre: "Genre",
+    summary: "Handlung",
+    notes: "Meine Notizen",
+    rating: "Meine Bewertung",
+    tmdbKey: "TMDB API-Schlüssel",
+    noMovies: "Tippen zum Starten",
+    export: "Alles exportieren",
+    importSost: "Ersetzen",
+    importAdd: "Hinzufügen",
+    sorting: "Sortieren nach",
+    grouping: "Gruppieren nach",
+    status: "Status",
+    all: "Alle",
+    bySaga: "Serienname",
+    byGenre: "Genre",
+    none: "Keine",
+    insertion: "Einfügereihenfolge",
+    votoDesc: "Beste ⭐",
+    annoAsc: "Jahr ↑",
+    annoDesc: "Jahr ↓",
+    az: "A-Z",
+    za: "Z-A",
+    totalItems: "Gesamt",
+    avgRating: "Ø Bewertung",
+    seasons: "Staffeln",
+    confirmDelete: "Endgültig löschen?",
+    sagaLabel: "Saga / Serie",
+    backupTitle: "Backup & Sicherheit",
+    placeholderTitle: "Titel suchen...",
+    placeholderPoster: "Poster-URL oder YouTube...",
+    selectSeason: "Staffel auswählen",
+    completeSeries: "Komplette Serie",
+    dangerZone: "Gefahrenzone",
+    clearAll: "Archiv leeren",
+    confirmClearAll: "Möchten Sie wirklich das gesamte Archiv löschen? Diese Aktion kann nicht rückgängig gemacht werden!",
+    streamingLink: "Streaming / Trailer-Link",
+    watchBtn: "Jetzt ansehen",
+    quotaError: "Browserspeicher fast voll! Bitte ein Backup erstellen.",
+    noResultsTitle: "Keine Ergebnisse",
+    noResultsDesc: "Keine Titel entsprechen Ihrer Suche oder den angewendeten Filtern.",
+    resetFilters: "Filter zurücksetzen"
+  },
+  fr: {
+    appTitle: "FrameVault",
+    movies: "Films",
+    series: "Séries TV",
+    add: "Nouveau titre",
+    addMovie: "Ajouter un film",
+    addSeries: "Ajouter une série",
+    search: "Rechercher dans la collection...",
+    stats: "Statistiques",
+    settings: "Paramètres",
+    watched: "Déjà vus",
+    toWatch: "À voir",
+    save: "Enregistrer",
+    cancel: "Annuler",
+    delete: "Supprimer",
+    director: "Réalisateur",
+    actor: "Distribution",
+    creator: "Créateur",
+    year: "Année",
+    duration: "Durée / Épisodes",
+    genre: "Genre",
+    summary: "Synopsis",
+    notes: "Mes notes",
+    rating: "Ma note",
+    tmdbKey: "Clé API TMDB",
+    noMovies: "Appuyez pour commencer",
+    export: "Tout exporter",
+    importSost: "Remplacer",
+    importAdd: "Ajouter",
+    sorting: "Trier par",
+    grouping: "Grouper par",
+    status: "Statut",
+    all: "Tous",
+    bySaga: "Nom de la série",
+    byGenre: "Genre",
+    none: "Aucun",
+    insertion: "Ordre d'ajout",
+    votoDesc: "Meilleurs ⭐",
+    annoAsc: "Année ↑",
+    annoDesc: "Année ↓",
+    az: "A-Z",
+    za: "Z-A",
+    totalItems: "Total",
+    avgRating: "Note moyenne",
+    seasons: "saisons",
+    confirmDelete: "Supprimer définitivement ?",
+    sagaLabel: "Saga / Série",
+    backupTitle: "Sauvegarde & Sécurité",
+    placeholderTitle: "Titre à rechercher...",
+    placeholderPoster: "URL affiche ou YouTube...",
+    selectSeason: "Sélectionner la saison",
+    completeSeries: "Série complète",
+    dangerZone: "Zone de danger",
+    clearAll: "Vider l'archive",
+    confirmClearAll: "Êtes-vous SÛR de vouloir supprimer toute l'archive ? Cette action est irréversible !",
+    streamingLink: "Lien streaming / bande-annonce",
+    watchBtn: "Regarder",
+    quotaError: "Mémoire du navigateur presque pleine ! Effectuez une sauvegarde.",
+    noResultsTitle: "Aucun résultat",
+    noResultsDesc: "Aucun titre ne correspond à votre recherche ou aux filtres appliqués.",
+    resetFilters: "Réinitialiser les filtres"
+  },
+  es: {
+    appTitle: "FrameVault",
+    movies: "Películas",
+    series: "Series de TV",
+    add: "Nuevo título",
+    addMovie: "Agregar película",
+    addSeries: "Agregar serie",
+    search: "Buscar en la colección...",
+    stats: "Estadísticas",
+    settings: "Ajustes",
+    watched: "Ya vistos",
+    toWatch: "Por ver",
+    save: "Guardar",
+    cancel: "Cancelar",
+    delete: "Eliminar",
+    director: "Director",
+    actor: "Reparto",
+    creator: "Creador",
+    year: "Año",
+    duration: "Duración / Episodios",
+    genre: "Género",
+    summary: "Sinopsis",
+    notes: "Mis apuntes",
+    rating: "Mi puntuación",
+    tmdbKey: "Clave API TMDB",
+    noMovies: "Toca para empezar",
+    export: "Exportar todo",
+    importSost: "Reemplazar",
+    importAdd: "Añadir",
+    sorting: "Ordenar por",
+    grouping: "Agrupar por",
+    status: "Estado",
+    all: "Todos",
+    bySaga: "Nombre de serie",
+    byGenre: "Género",
+    none: "Ninguno",
+    insertion: "Orden de inserción",
+    votoDesc: "Mejores ⭐",
+    annoAsc: "Año ↑",
+    annoDesc: "Año ↓",
+    az: "A-Z",
+    za: "Z-A",
+    totalItems: "Total",
+    avgRating: "Puntuación media",
+    seasons: "temporadas",
+    confirmDelete: "¿Eliminar definitivamente?",
+    sagaLabel: "Saga / Serie",
+    backupTitle: "Copia de seguridad",
+    placeholderTitle: "Título a buscar...",
+    placeholderPoster: "URL del póster o YouTube...",
+    selectSeason: "Seleccionar temporada",
+    completeSeries: "Serie completa",
+    dangerZone: "Zona de peligro",
+    clearAll: "Vaciar archivo",
+    confirmClearAll: "¿Estás SEGURO de que deseas eliminar todo el archivo? ¡Esta acción no se puede deshacer!",
+    streamingLink: "Enlace streaming / tráiler",
+    watchBtn: "Ver ahora",
+    quotaError: "¡Memoria del navegador casi llena! Realiza una copia de seguridad.",
+    noResultsTitle: "Sin resultados",
+    noResultsDesc: "No hay títulos que coincidan con tu búsqueda o los filtros aplicados.",
+    resetFilters: "Restablecer filtros"
+  },
+  pt: {
+    appTitle: "FrameVault",
+    movies: "Filmes",
+    series: "Séries de TV",
+    add: "Novo título",
+    addMovie: "Adicionar filme",
+    addSeries: "Adicionar série",
+    search: "Pesquisar na coleção...",
+    stats: "Estatísticas",
+    settings: "Definições",
+    watched: "Já vistos",
+    toWatch: "Para ver",
+    save: "Guardar",
+    cancel: "Cancelar",
+    delete: "Eliminar",
+    director: "Realizador",
+    actor: "Elenco",
+    creator: "Criador",
+    year: "Ano",
+    duration: "Duração / Episódios",
+    genre: "Género",
+    summary: "Sinopse",
+    notes: "As minhas notas",
+    rating: "A minha avaliação",
+    tmdbKey: "Chave API TMDB",
+    noMovies: "Toque para começar",
+    export: "Exportar tudo",
+    importSost: "Substituir",
+    importAdd: "Adicionar",
+    sorting: "Ordenar por",
+    grouping: "Agrupar por",
+    status: "Estado",
+    all: "Todos",
+    bySaga: "Nome da série",
+    byGenre: "Género",
+    none: "Nenhum",
+    insertion: "Ordem de inserção",
+    votoDesc: "Melhores ⭐",
+    annoAsc: "Ano ↑",
+    annoDesc: "Ano ↓",
+    az: "A-Z",
+    za: "Z-A",
+    totalItems: "Total",
+    avgRating: "Avaliação média",
+    seasons: "temporadas",
+    confirmDelete: "Eliminar definitivamente?",
+    sagaLabel: "Saga / Série",
+    backupTitle: "Backup & Segurança",
+    placeholderTitle: "Título a pesquisar...",
+    placeholderPoster: "URL do poster ou YouTube...",
+    selectSeason: "Selecionar temporada",
+    completeSeries: "Série completa",
+    dangerZone: "Zona de perigo",
+    clearAll: "Limpar arquivo",
+    confirmClearAll: "Tem a CERTEZA de que quer apagar todo o arquivo? Esta ação não pode ser desfeita!",
+    streamingLink: "Link streaming / trailer",
+    watchBtn: "Ver agora",
+    quotaError: "Memória do browser quase cheia! Faça um backup por segurança.",
+    noResultsTitle: "Sem resultados",
+    noResultsDesc: "Nenhum título corresponde à sua pesquisa ou aos filtros aplicados.",
+    resetFilters: "Repor filtros"
   }
 };
 
@@ -419,8 +668,18 @@ const MovieForm = ({ onSave, onClose, initialData, lang, activeTab }) => {
 
 /* ── APP PRINCIPALE ── */
 const App = () => {
-  const [lang, setLang] = useState(() => translations[navigator.language.split('-')[0]] ? navigator.language.split('-')[0] : 'en');
+  const [lang, setLang] = useState(() => {
+    const saved = localStorage.getItem('framevault-lang');
+    if (saved && translations[saved]) return saved;
+    const browserLang = navigator.language.split('-')[0];
+    return translations[browserLang] ? browserLang : 'en';
+  });
   const t = translations[lang];
+
+  const changeLang = (newLang) => {
+    setLang(newLang);
+    localStorage.setItem('framevault-lang', newLang);
+  };
 
   const [movies, setMovies] = useState(() => {
     try {
@@ -589,6 +848,14 @@ const App = () => {
             <button onClick={() => setShowStats(true)} style={{background:'transparent', border:'none', fontSize:'18px', marginLeft:'8px', padding:'5px'}}>📊</button>
             <button onClick={() => setShowControls(!showControls)} style={{background:'transparent', border:'none', fontSize:'18px', color: showControls ? '#c9a84c' : '#555', marginLeft:'8px', padding:'5px'}}>🎛️</button>
             <button onClick={() => setShowSettings(true)} style={{background:'transparent', border:'none', fontSize:'18px', marginLeft:'8px', padding:'5px'}}>⚙️</button>
+            <select value={lang} onChange={e => changeLang(e.target.value)} style={{background:'#13131a', border:'1px solid #2a2a3a', color:'#c9a84c', borderRadius:'6px', padding:'4px 6px', fontSize:'12px', marginLeft:'8px', cursor:'pointer'}}>
+               <option value="it">🇮🇹</option>
+               <option value="en">🇬🇧</option>
+               <option value="de">🇩🇪</option>
+               <option value="fr">🇫🇷</option>
+               <option value="es">🇪🇸</option>
+               <option value="pt">🇵🇹</option>
+            </select>
          </div>
          
          <div style={{padding:'0 16px 12px'}}>
@@ -667,7 +934,7 @@ const App = () => {
                    {g.items.map(m => (
                      <div key={m.id} className="card" onClick={() => setDetailMovie(m)}>
                         <div style={{aspectRatio:'2/3', background:'#111'}}>
-                           <img src={getPoster(m)} style={{width:'100%', height:'100%', objectFit:'cover'}} onError={(e) => { e.target.onerror = null; e.target.src="https://via.placeholder.com/300x450?text=No+Poster"; }} />
+                           <img src={getPoster(m)} style={{width:'100%', height:'100%', objectFit:'cover'}} onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/300x450/111/555?text=No+Poster"; }} />
                            {m.visto && <div style={{position:'absolute', top:'6px', right:'6px', background:'#c9a84c', color:'#000', fontSize:'10px', fontWeight:'bold', padding:'2px 5px', borderRadius:'4px', zIndex:2}}>✓</div>}
                         </div>
                         <div style={{padding:'10px'}}>
@@ -735,7 +1002,7 @@ const App = () => {
       {detailMovie && (
         <div className="modal-overlay" onClick={() => setDetailMovie(null)}>
           <div className="modal-content" onClick={e => e.stopPropagation()} style={{border:'1px solid rgba(201,168,76,0.3)'}}>
-            <img src={getPoster(detailMovie)} style={{width:'100%', maxHeight:'40vh', objectFit:'cover'}} onError={(e) => { e.target.onerror = null; e.target.src="https://via.placeholder.com/300x450?text=No+Poster"; }} />
+            <img src={getPoster(detailMovie)} style={{width:'100%', maxHeight:'40vh', objectFit:'cover'}} onError={(e) => { e.target.onerror = null; e.target.src="https://placehold.co/300x450/111/555?text=No+Poster"; }} />
             <div style={{padding:'20px'}}>
                <div style={{display:'flex', gap:'5px', marginBottom:'10px'}}>{detailMovie.genere?.split(',').map(g => <span key={g} className="tag">{g.trim()}</span>)}</div>
                <h2 style={{fontFamily:"'Playfair Display',serif", fontSize:'26px'}}>{detailMovie.titolo}</h2>
